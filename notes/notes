@@ -1,0 +1,11 @@
+virtual environment location :
+/home/pi/.virtualenvs/cv3
+
+/home/pi/.virtualenvs/cv3/lib/python3.2/site-packages
+
+or 
+~/.virtualenvs/cv3
+
+
+Python stuff is here
+/usr/local/lib

@@ -1,0 +1,107 @@
+pi@raspberrypi ~ $ git clone https://github.com/christophviehoff/computervision.git
+Cloning into 'computervision'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 3
+Unpacking objects: 100% (3/3), done.
+pi@raspberrypi ~ $ ls
+computervision  Documents  get-pip.py  opencv_contrib  python_games
+Desktop         Downloads  opencv      __pycache__     vnc.sh
+pi@raspberrypi ~ $ cd Computervision
+bash: cd: Computervision: No such file or directory
+pi@raspberrypi ~ $ cd computervision/
+pi@raspberrypi ~/computervision $ ls
+README.md
+pi@raspberrypi ~/computervision $ git --help
+usage: git [--version] [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [-c name=value] [--help]
+           <command> [<args>]
+
+The most commonly used git commands are:
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
+   clone      Clone a repository into a new directory
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   fetch      Download objects and refs from another repository
+   grep       Print lines matching a pattern
+   init       Create an empty git repository or reinitialize an existing one
+   log        Show commit logs
+   merge      Join two or more development histories together
+   mv         Move or rename a file, a directory, or a symlink
+   pull       Fetch from and merge with another repository or a local branch
+   push       Update remote refs along with associated objects
+   rebase     Forward-port local commits to the updated upstream head
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+   show       Show various types of objects
+   status     Show the working tree status
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+See 'git help <command>' for more information on a specific command.
+pi@raspberrypi ~/computervision $ ls -a
+.  ..  .git  README.md
+pi@raspberrypi ~/computervision $ ls
+README.md  videostream_demo.py
+pi@raspberrypi ~/computervision $ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	videostream_demo.py
+nothing added to commit but untracked files present (use "git add" to track)
+pi@raspberrypi ~/computervision $ git add videostream_demo.py
+pi@raspberrypi ~/computervision $ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   videostream_demo.py
+#
+pi@raspberrypi ~/computervision $ git commit -m "Add videostream.py"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident  <pi@raspberrypi.(none)> not allowed
+pi@raspberrypi ~/computervision $ git config user.email "christoph.viehoff@gmail.com"
+pi@raspberrypi ~/computervision $ git config user.name "christophviehoff"pi@raspberrypi ~/computervision $ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   videostream_demo.py
+#
+pi@raspberrypi ~/computervision $ git commit .
+[master c3c4c6a] Modified pyvideostream with classes
+ 1 file changed, 198 insertions(+)
+ create mode 100644 videostream_demo.py
+pi@raspberrypi ~/computervision $ git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#
+nothing to commit (working directory clean)
+pi@raspberrypi ~/computervision $ git push
+Username for 'https://github.com': christophviehoff
+Password for 'https://christophviehoff@github.com': Git4Chris
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 2.07 KiB, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/christophviehoff/computervision.git
+   cfa2e59..c3c4c6a  master -> master
+pi@raspberrypi ~/computervision $ git status
+# On branch master
+nothing to commit (working directory clean)
+pi@raspberrypi ~/computervision $ 
